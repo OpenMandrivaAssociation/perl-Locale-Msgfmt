@@ -1,5 +1,5 @@
 %define upstream_name    Locale-Msgfmt
-%define upstream_version 0.14
+%define upstream_version 0.15
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -17,7 +17,8 @@ BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-no description found
+This module does the same thing as msgfmt from GNU gettext-tools, except this
+is pure Perl.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
@@ -41,7 +42,5 @@ rm -rf %buildroot
 %defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/*
-/usr/bin/msgfmt.pl
-/usr/share/man/man1/msgfmt.pl.1.lzma
-
+%{perl_vendorlib}/Locale
+%{perl_vendorlib}/Module
