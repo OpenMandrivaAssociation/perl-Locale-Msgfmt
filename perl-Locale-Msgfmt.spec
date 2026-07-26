@@ -1,15 +1,13 @@
 %define upstream_name    Locale-Msgfmt
-%define upstream_version 0.15
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	5
+Version:	0.15
+Release:	6
 
 Summary:	Functions used internally by Locale::Msgfmt
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Locale-Msgfmt
-Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Locale-Msgfmt-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AZ/AZAWAWI/Locale-Msgfmt-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ This module does the same thing as msgfmt from GNU gettext-tools, except this
 is pure Perl.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
